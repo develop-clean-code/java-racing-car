@@ -1,14 +1,10 @@
-import java.util.Random;
-
 public class RacingCar {
 
     private int position;
-    private Random random;
     private int max;
     private int min;
 
     RacingCar() {
-        random = new Random();
         position = 0; // 초기화
     }
 
@@ -26,12 +22,12 @@ public class RacingCar {
         return position;
     }
 
-    public boolean enableMove() {
-        return random.nextInt(max + 1) > min;
+    public boolean enableMove(int a) {
+        return a >= min && a <= max;
     }
 
-    public void tryMove() {
-        if (enableMove())
+    public void tryMove(int randomNum) {
+        if (enableMove(randomNum))
             move();
     }
 }

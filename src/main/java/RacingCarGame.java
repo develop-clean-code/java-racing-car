@@ -39,17 +39,21 @@ public class RacingCarGame {
     public List<Integer> move() {
         List<Integer> carPositions = new ArrayList<>();
         for (int i = 0; i < carNum; i++) {
-            RacingCar racingCar = tryMoveCar();
-            carPositions.add(racingCar.getPosition());
+            carPositions.add(tryMoveCar().getPosition());
         }
         return carPositions;
     }
 
     public RacingCar tryMoveCar() {
         RacingCar racingCar = new RacingCar(MAX_MOVE_FORWARD_NUM, MIN_MOVE_FORWARD_NUM);
+
         for (int i = 0; i < tryNum; i++) {
-            racingCar.tryMove();
+            racingCar.tryMove(getRandomNum());
         }
         return racingCar;
+    }
+
+    public int getRandomNum() {
+        return random.nextInt(MAX_MOVE_FORWARD_NUM + 1);
     }
 }
