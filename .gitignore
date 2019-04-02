@@ -23,3 +23,10 @@
 /nbdist/
 /.nb-gradle/
 /build/
+
+.DS_Store
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+/out/
+/target/
