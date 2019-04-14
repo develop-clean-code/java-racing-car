@@ -17,14 +17,13 @@ public class RacingCarGameTest {
         this.tryNum = 5;
         String[] carNames = {"pobi", "crong", "honux"};
 
-        racingCarGame = new RacingCarGame(carNum, tryNum, carNames);
+        racingCarGame = new RacingCarGame(carNum, carNames);
     }
 
     @Test
     public void tryMove_성공() {
 
-        boolean[] moveSuccess = new boolean[3];
-        moveSuccess = racingCarGame.tryMove();
+        racingCarGame.tryMove();
 
         racingCarGame.getRacingCarList().forEach(racingCar ->
                 assertTrue(racingCar.move(6)));
@@ -42,7 +41,7 @@ public class RacingCarGameTest {
         racingCarGame.getRacingCarList().get(1).setPosition(0);
         racingCarGame.getRacingCarList().get(2).setPosition(0);
 
-        ArrayList<String> winnerList =  racingCarGame.selectWinners();
+        ArrayList<String> winnerList = racingCarGame.selectWinners();
 
         assertEquals(winnerList.size(), 1);
         assertEquals(winnerList.get(0), "pobi");
@@ -54,7 +53,7 @@ public class RacingCarGameTest {
         racingCarGame.getRacingCarList().get(1).setPosition(10);
         racingCarGame.getRacingCarList().get(2).setPosition(0);
 
-        ArrayList<String> winnerList =  racingCarGame.selectWinners();
+        ArrayList<String> winnerList = racingCarGame.selectWinners();
 
         assertEquals(winnerList.size(), 2);
         assertEquals(winnerList.get(0), "pobi");

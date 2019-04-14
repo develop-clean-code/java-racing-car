@@ -17,7 +17,7 @@ public class RacingGameMain {
         String[] parsedCarNames = racingCarNameParser.parse(carNames);
         int carCount = racingCarNameParser.getNameCount();
 
-        RacingCarGame racingCarGame = new RacingCarGame(carCount, tryCount, parsedCarNames);
+        RacingCarGame racingCarGame = new RacingCarGame(carCount, parsedCarNames);
 
         for (int i = 0; i < tryCount; i++) {
             racingCarGame.tryMove(); // 자동차 경주 시작

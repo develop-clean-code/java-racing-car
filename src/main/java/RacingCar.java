@@ -36,12 +36,4 @@ public class RacingCar {
         return tryNumber >= MIN && tryNumber <= MAX;
     }
 
-
-    @Override
-    public String toString() {
-        return "RacingCar{" +
-                "carName='" + carName + '\'' +
-                ", position=" + position +
-                '}';
-    }
 }

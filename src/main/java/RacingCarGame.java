@@ -4,19 +4,14 @@ import java.util.Random;
 
 public class RacingCarGame {
 
-    private int carNum;
-    private int tryNum;
     private List<RacingCar> racingCarList = new ArrayList<>();
 
     private int maxPoistion;
 
-    public RacingCarGame(int carNum, int tryNum, String[] carNames) {
-        this.carNum = carNum;
-        this.tryNum = tryNum;
+    public RacingCarGame(int carNum, String[] carNames) {
         for (int i = 0; i < carNum; i++) {
             RacingCar racingCar = new RacingCar(carNames[i]);
             racingCarList.add(racingCar);
-            System.out.println(racingCar);
         }
 
         maxPoistion = 0;
