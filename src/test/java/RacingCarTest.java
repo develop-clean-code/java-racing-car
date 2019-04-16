@@ -16,7 +16,7 @@ public class RacingCarTest {
     @Before
     public void setup() {
         random = new Random();
-        racingCar = new RacingCar(max, min);
+        racingCar = new RacingCar("name", max, min);
     }
 
     @Test
@@ -60,14 +60,26 @@ public class RacingCarTest {
     }
 
     @Test
-    public void enableMove_TRUE() {
+    public void enableMove_성공() {
         Random random = new Random();
         assertTrue(racingCar.enableMove(random.nextInt(max - min + 1) + min));
     }
 
     @Test
-    public void enableMove_FALSE() {
+    public void enableMove_실패() {
         Random random = new Random();
         assertFalse(racingCar.enableMove(random.nextInt(min)));
+    }
+
+    @Test
+    public void compareTo_성공() {
+        racingCar.move();
+        assertEquals(racingCar.compareTo(new RacingCar()), -1);
+
+    }
+
+    @Test
+    public void compareTo_실패() {
+        assertNotEquals(racingCar.compareTo(new RacingCar()), -1);
     }
 }
