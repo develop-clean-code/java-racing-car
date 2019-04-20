@@ -10,6 +10,7 @@ public class RacingCarGame {
 
     public static final int MAX_MOVE_FORWARD_NUM = 9;
     public static final int MIN_MOVE_FORWARD_NUM = 4;
+
     private List<RacingCar> cars = new ArrayList<>();
     private List<RacingCar> winners = new ArrayList<>();
 
@@ -69,8 +70,16 @@ public class RacingCarGame {
     }
 
     public int getWinnerPosition(List<RacingCar> cars) {
-        Collections.sort(cars);
-        return cars.get(0).getPosition();
+        int maxPosition = 0;
+        for (RacingCar car : cars) {
+            maxPosition = getBiggerPosition(maxPosition,car.getPosition());
+        }
+        return maxPosition;
+    }
+    public int getBiggerPosition(int position, int comparePosition){
+        if(position < comparePosition)
+            return comparePosition;
+        return position;
     }
 
     public List<RacingCar> getWinners(List<RacingCar> cars) {

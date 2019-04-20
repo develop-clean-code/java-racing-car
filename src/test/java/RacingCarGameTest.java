@@ -105,4 +105,13 @@ public class RacingCarGameTest {
     }
 
 
+    @Test
+    public void getBiggerPosition_성공() {
+        assertEquals(1,racingCarGame.getBiggerPosition(1,0));
+    }
+
+    @Test
+    public void getBiggerPosition_실패() {
+        assertNotEquals(0,racingCarGame.getBiggerPosition(1,0));
+    }
 }

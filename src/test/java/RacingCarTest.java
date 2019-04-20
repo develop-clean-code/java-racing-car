@@ -62,7 +62,11 @@ public class RacingCarTest {
     @Test
     public void enableMove_성공() {
         Random random = new Random();
-        assertTrue(racingCar.enableMove(random.nextInt(max - min + 1) + min));
+        // random , 범위 테스트일 경우 다 하는게 맞을듯
+        for (int i = min; i <= max; i++) {
+            assertTrue(racingCar.enableMove(i));
+        }
+        //assertTrue(racingCar.enableMove(random.nextInt(max - min + 1) + min));
     }
 
     @Test
